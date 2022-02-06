@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import GlobalStyle from "./common/GlobalStyle";
+import ComponentContainer from "./common/ComponentContainer";
 
 const ToggleBox = styled.div`
   display: flex;
@@ -46,7 +46,7 @@ const Toggle = () => {
   const [state, setState] = useState(false);
 
   return (
-    <GlobalStyle title="Toggle">
+    <ComponentContainer title="Toggle">
       <ToggleBox>
         <ToggleWrapper>
           <Progressbar state={state} />
@@ -54,7 +54,7 @@ const Toggle = () => {
         </ToggleWrapper>
         <p>Toggle Switch{state ? " ON" : " OFF"}</p>
       </ToggleBox>
-    </GlobalStyle>
+    </ComponentContainer>
   );
 };
 

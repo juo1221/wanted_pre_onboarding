@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import GlobalStyle from "./common/GlobalStyle";
-
+import ComponentContainer from "./common/ComponentContainer";
 const Button = styled.div`
   display: flex;
   justify-content: center;
@@ -47,7 +46,7 @@ const CloseBtn = styled.button`
 const Modal = () => {
   const [state, setState] = useState(false);
   return (
-    <GlobalStyle title="Modal">
+    <ComponentContainer title="Modal">
       <Button onClick={() => setState(!state)}>Open Modal</Button>
       {state && (
         <>
@@ -58,7 +57,7 @@ const Modal = () => {
           </ModalWindow>
         </>
       )}
-    </GlobalStyle>
+    </ComponentContainer>
   );
 };
 
