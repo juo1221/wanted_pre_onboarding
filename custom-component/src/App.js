@@ -4,6 +4,7 @@ import Toggle from "./component/Toggle";
 import Modal from "./component/Modal";
 import Tab from "./component/Tab";
 import ClickToEdit from "./component/ClickToEdit";
+import AutoComplete from "./component/AutoComplete";
 import GlobalStyle from "./component/common/GlobalStyle";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Toggle />
       <Modal />
       <Tab />
+      <AutoComplete />
       <ClickToEdit />
     </div>
   );
