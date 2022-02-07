@@ -13,7 +13,7 @@ const Container = styled.div`
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
+  margin: 2rem 0;
 `;
 
 const Title = styled.span`
