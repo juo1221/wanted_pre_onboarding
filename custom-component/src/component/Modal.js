@@ -45,14 +45,16 @@ const CloseBtn = styled.button`
 `;
 const Modal = () => {
   const [state, setState] = useState(false);
+  const toggleState = () => setState(!state);
+
   return (
     <ComponentContainer title="Modal">
-      <Button onClick={() => setState(!state)}>Open Modal</Button>
+      <Button onClick={toggleState}>Open Modal</Button>
       {state && (
         <>
-          <ModalBackground />
+          <ModalBackground onClick={toggleState} />
           <ModalWindow>
-            <CloseBtn onClick={() => setState(!state)}>X</CloseBtn>
+            <CloseBtn onClick={toggleState}>X</CloseBtn>
             <p>HELLO CODESTATES!</p>
           </ModalWindow>
         </>
