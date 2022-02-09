@@ -1,9 +1,7 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import ComponentContainer from "./common/ComponentContainer";
-const err = (msg) => {
-  throw msg;
-};
+import { err } from "../util/util";
 const Container = styled.div`
   position: absolute;
   top: 50%;
