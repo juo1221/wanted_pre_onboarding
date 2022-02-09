@@ -29,8 +29,8 @@ const Block = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0.1rem 0.5rem;
-  margin: 0.51rem;
+  padding: 0.5rem 0.7rem;
+  margin: 0.5rem;
   background: #814bea;
   border-radius: 5px;
 `;
@@ -42,9 +42,9 @@ const Text = styled.span`
 const CloseBtn = styled.button`
   position: absolute;
   right: 0.5rem;
-  width: 1.2rem;
-  height: 1.2rem;
-  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-bottom: 3px;
   background-color: #ffffff;
   border-radius: 50%;
   cursor: pointer;
