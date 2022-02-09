@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import ComponentContainer from "./common/ComponentContainer";
 import { v4 as uuidv4 } from "uuid";
+import { err } from "../util/util";
 
 const Container = styled.div`
   display: flex;
@@ -49,17 +50,33 @@ const CloseBtn = styled.button`
   border-radius: 50%;
   cursor: pointer;
 `;
-const Toggle = () => {
+const Tag = () => {
   const [isFocused, setIsFocused] = useState(false);
   const [tags, setTags] = useState([{ text: "Hi", id: uuidv4() }]);
   const inputRef = useRef();
 
   const focusInput = () => inputRef.current.focus();
 
+  const tagTest = {
+    table: [(prev, text) => prev.some((tag) => tag.text === text), (prev, text) => text.length > 20],
+    test(prev, text) {
+      if (this.table.some((f) => f(prev, text))) {
+        err(`invalid tag : ${text}`);
+      } else return false;
+    },
+  };
+
   const hadleMouseDown = (e) => {
     if (e.keyCode !== 13 || !e.target.value.trim()) return;
     const text = inputRef.current.value;
-    setTags((prev) => [...prev, { text, id: uuidv4() }]);
+    setTags((prev) => {
+      try {
+        if (!tagTest.test(prev, text)) return [...prev, { text, id: uuidv4() }];
+      } catch (err) {
+        console.error(err);
+        return prev;
+      }
+    });
     focusInput();
     inputRef.current.value = "";
   };
@@ -88,4 +105,4 @@ const Toggle = () => {
   );
 };
 
-export default Toggle;
+export default Tag;
