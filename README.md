@@ -38,7 +38,7 @@
 
   <img width="778" alt="스크린샷 2022-02-09 오후 3 46 30" src="https://user-images.githubusercontent.com/79268108/153141396-0d4e6585-43a0-4cb7-9cc8-a93e0db97ea1.png">
 
-  레이아웃 변경이 최소화 된것을 확인할 수 있었고 사파리에서도 부드러운 애니메이션을 구현할 수 있었습니다. 
+  레이아웃 변경이 최소화 된 것을 확인할 수 있었고 사파리에서도 부드러운 애니메이션을 구현할 수 있었습니다. 
 
   전 후 비교영상 보러가기 : https://statuesque-stag-6a0.notion.site/pre_onBoarding-de3d59959d4a438f990cb7844aae35b7
 
