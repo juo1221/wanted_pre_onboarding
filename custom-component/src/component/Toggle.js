@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import ComponentContainer from "./common/ComponentContainer";
 
@@ -31,10 +31,9 @@ const Progressbar = styled.div`
 const Button = styled.div`
   position: absolute;
   top: 0;
-  left: ${({ state }) => (state ? "100%" : 0)};
-  transform: ${({ state }) => (state ? "translateX(-120%)" : "translateX(20%)")};
   width: 1.5rem;
   height: 1.5rem;
+  transform: ${({ state, parentW }) => (state ? `translateX(${(parentW / 1.5 - 1) * 100 - 20}%)` : "translateX(20%)")};
   margin-top: 0.25rem;
   border-radius: 50%;
   background-color: #ffffff;
@@ -44,13 +43,18 @@ const Button = styled.div`
 
 const Toggle = () => {
   const [state, setState] = useState(false);
-
+  const [width, setWidth] = useState(0);
+  const btnRef = useRef();
+  useEffect(() => {
+    const w = btnRef.current.getBoundingClientRect().width / 16;
+    setWidth(w);
+  }, []);
   return (
     <ComponentContainer title="Toggle">
       <ToggleBox>
-        <ToggleWrapper>
+        <ToggleWrapper ref={btnRef}>
           <Progressbar state={state} />
-          <Button state={state} onClick={() => setState(!state)} />
+          <Button parentW={width} state={state} onClick={() => setState(!state)} />
         </ToggleWrapper>
         <p>Toggle Switch{state ? " ON" : " OFF"}</p>
       </ToggleBox>
