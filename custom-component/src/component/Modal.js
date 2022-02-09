@@ -39,7 +39,6 @@ const ModalWindow = styled(Button)`
 `;
 const CloseBtn = styled.button`
   color: #814aea;
-  border: none;
   background-color: transparent;
   cursor: pointer;
 `;

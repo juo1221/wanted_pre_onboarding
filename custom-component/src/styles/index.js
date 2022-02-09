@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-
+import { normalize } from "styled-normalize";
 const GlobalStyle = createGlobalStyle`
+  ${normalize}
   *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -13,7 +14,10 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
- 
+  button {
+    border:none;
+    outline:none;
+  }
 `;
 
 export default GlobalStyle;
