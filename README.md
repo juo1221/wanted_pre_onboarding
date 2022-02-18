@@ -121,6 +121,6 @@
 <img width="906" alt="스크린샷 2022-02-09 오후 5 34 40" src="https://user-images.githubusercontent.com/79268108/153156792-33590f50-1ef5-44a4-b925-42af184dbf1b.png">
 
 - common / ComponentContainer : 각 컴포넌트를 감싸는 부모 컨테이너 입니다.
-- styles / idnex.js : 전역 스타일을 관리하는 파일입니다.
-- util / uitl.js : 유틸리티 함수를 관리하는 파일입니다. 
+- styles / index.js : 전역 스타일을 관리하는 파일입니다.
+- util / util.js : 유틸리티 함수를 관리하는 파일입니다. 
 
